@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para Larissa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="flash-overlay"></div>
+
+<div class="container">
+
+    <div id="screen-1" class="screen active">
+        <h2 id="t1-title"></h2>
+        <p id="t1-subtitle"></p>
+        <div class="avatar-wrapper">
+            <div class="avatar-container">
+                <div id="target-avatar"></div>
+                <div class="pow-effect">POW 👊</div>
+            </div>
+        </div>
+        <div class="reaction-images-container">
+            <img id="img-reaction-0" class="reaction-img active" alt="Normal">
+            <img id="img-reaction-1" class="reaction-img" alt="Machucado">
+            <img id="img-reaction-2" class="reaction-img" alt="Muito Machucado">
+        </div>
+        <p id="counter-text" style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">Hits: 0</p>
+        <button class="btn" id="btn-screen-1" style="display: none;"></button>
+    </div>
+
+    <div id="screen-2" class="screen">
+        <h2 id="t2-title"></h2>
+        <div class="signal-wrapper">
+            <div class="video-frame interference">
+                <video id="video-explanation" class="explanation-video" autoplay muted loop playsinline></video>
+                <div class="static-noise"></div>
+            </div>
+            <div class="explanation-text blurred-text" id="t2-text-container"></div>
+        </div>
+        <div class="tuner-container">
+            <p class="tuner-instruction">🎚️ Deslize para melhorar o sinal</p>
+            <input type="range" id="frequency-slider" min="0" max="100" value="0" class="frequency-range">
+        </div>
+        <button class="btn" id="btn-screen-2" onclick="app.nextScreen(3)" style="opacity: 0; pointer-events: none; transition: all 0.5s ease; margin-top: 15px;">Ler a carta...</button>
+    </div>
+
+    <div id="screen-3" class="screen">
+        <h2 id="t3-title"></h2>
+        <p id="t3-subtitle" style="margin-bottom: 1rem; opacity: 0.7;"></p>
+        <div class="envelopes-wrapper" id="envelopes-container"></div>
+        <div class="fixed-bottom-btn">
+            <button class="btn" id="btn-screen-3" onclick="app.nextScreen(4)"></button>
+        </div>
+    </div>
+
+    <div id="screen-4" class="screen">
+        <h2 id="t4-title"></h2>
+        
+        <div class="final-img-frame">
+            <img id="img-final" class="final-img" alt="Nós">
+        </div>
+
+        <div class="final-content">
+            <p id="t4-main-msg" class="main-msg" style="font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; text-align: center;"></p>
+            <div id="t4-body-container" style="margin-bottom: 20px;"></div>
+        </div>
+
+        <div id="hold-interaction-area">
+            <p id="hold-instruction" style="opacity: 0.8; margin-bottom: 10px; font-size: 0.9rem;">Segure o coração para aceitar</p>
+            
+            <div class="hold-button-wrapper">
+                <svg class="progress-ring" width="120" height="120">
+                   <circle class="progress-ring__circle" stroke="var(--accent)" stroke-width="6" fill="transparent" r="54" cx="60" cy="60"/>
+                </svg>
+                <button id="btn-hold-action" class="btn-hold-circle">
+                    <span style="font-size: 3rem;">❤️‍🩹</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="final-success-container" style="display: none; flex-direction: column; align-items: center; animation: fadeUp 1s forwards; width: 100%;">
+            
+            <h2 style="font-size: 2.5rem; margin: 20px 0 10px 0; color: var(--accent); font-weight: 900; letter-spacing: 1px;">EU TE AMO!</h2>
+            
+            <p style="font-size: 1.5rem; letter-spacing: 5px; margin-bottom: 20px;">🖤🖤🖤🖤🖤🖤🖤</p>
+            
+            <p style="opacity: 0.8;">Obrigado por não desistir de mim.</p>
+            
+            <button class="btn" onclick="app.goToInstagram()" style="margin-top: 30px; background-color: #E1306C; border-color: #E1306C; color: white;">
+                Responder no Instagram 💬
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
